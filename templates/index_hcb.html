@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Bill Prediction</title>
+</head>
+<body>
+ <div style="color:blue">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h2>Health Care Bill Predictive Analysis</h2>
+            <h3>Year</h3>
+            <h3>Its a hosplial bill predection basd on Random Forest.</h3><br>
+            <h3>What is the age of Paitent?(Years)</h3><br><input id="One" name="Age" type="number" required ="required">
+            <h3>Gender </h3><br><select name="Gender" id="Two" required ="required" >
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select><br><br>
+
+            <h3>Number of days patient was admitted.</h3><br><input id="Three"  name="admited_days" type="number" required ="required"><br><br>
+            <h3>Blood_Type </h3><br><select id="Four" name="Blood_Type" required ="required">
+                <option value="A+">A-</option>
+                <option value="A-">A-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select><br><br>
+            <h3>Medical_Condition </h3><br><select id="Five" name="Medical_Condition" required ="required">
+                <option value="Arthritis">Arthritis</option>
+                <option value="Asthma">Asthma</option>
+                <option value="Cancer">Cancer</option>
+                <option value="Diabetes">Diabetes</option>
+                <option value="Hypertension">Hypertension</option>
+                <option value="Obesity">Obesity</option>
+            </select><br><br>
+            <h3>Insurance_Provider </h3><br><select id="Six" name="Insurance_Provider" required ="required">
+                <option value="Athina">Athina</option>
+                <option value="Blue Cross">Blue Cross</option>
+                <option value="Cigna">Cigna</option>
+                <option value="Medicare">Medicare</option>
+                <option value="United Health Care">United Health Care</option>
+            </select><br><br>
+            <h3>Admission_type </h3><br><select id="Seven" name="Admission_type" required="required">
+                <option value="Elective">Elective</option>
+                <option value="Emergency">Emergency</option>
+                <option value="Urgent">Urgent</option>
+            </select><br><br>
+            <h3>Medication_Type</h3><br><select id="Eight" name="Medication_Type" required="required">
+                <option value="Asprin">Asprin</option>
+                <option value="Ibuprofen">Ibuprofen</option>
+                <option value="Lipitor">Lipitor</option>
+                <option value="Paracetamol">Paracetamol</option>
+                <option value="Penicillin">Penicillin</option>
+            </select><br><br>
+            <h3>Test_Results</h3><br><select id="Nine" name="Test_Results" required="'required">
+                <option value="Abnormal">Abnormal</option>
+                <option value="Inconclusive">Inconclusive</option>
+                <option value="Normal">Normal</option>
+            </select>
+            <br><br><button id="sub" type="Submit">Calculate the Selling Price</button>
+            <br>
+
+    </form>
+
+    <br><br><h3>{{ prediction_text }}<h3>
+    </div>
+    <style>
+        body {
+            background-color: lightslategray;
+            text-align: center;
+            padding: 0px;
+        }
+               
+        #One {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #Two {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #Three {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #Four {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        #Five {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        #Six {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        #Seven {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        #Eight {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        #Nine {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</body>
